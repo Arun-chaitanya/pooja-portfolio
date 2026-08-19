@@ -290,10 +290,10 @@ def set_meta(page, slug):
         r'(<meta property="og:title" content=")[^"]*': r"\g<1>" + title,
         r'(<meta property="og:description" content=")[^"]*': r"\g<1>" + d,
         r'(<meta property="og:url" content=")[^"]*': r"\g<1>" + f"{BASE}/{slug}/",
-        r'(<meta property="og:image" content=")[^"]*': r"\g<1>" + f"{BASE}/assets/og/{card}.png",
+        r'(<meta property="og:image" content=")[^"]*': r"\g<1>" + f"{BASE}/assets/og/{card}.jpg",
         r'(<meta name="twitter:title" content=")[^"]*': r"\g<1>" + title,
         r'(<meta name="twitter:description" content=")[^"]*': r"\g<1>" + d,
-        r'(<meta name="twitter:image" content=")[^"]*': r"\g<1>" + f"{BASE}/assets/og/{card}.png",
+        r'(<meta name="twitter:image" content=")[^"]*': r"\g<1>" + f"{BASE}/assets/og/{card}.jpg",
     }
     for pat, rep in repl.items():
         page = re.sub(pat, rep, page)
