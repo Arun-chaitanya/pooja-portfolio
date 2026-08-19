@@ -272,7 +272,7 @@ DECK_JS = """
 
 
 # ---- per-page social/SEO meta (og:*, twitter:*, description) ---------------
-BASE = "https://sabhyabacchi.vercel.app"
+BASE = "https://sabhyabacchi.com"
 PAGE_META = {
     "about":   ("About — SabhyaBacchi", "about",
                 "A scientist. A paradox. A storyteller with a camera and crayons in her hands. Previously in STEM: DRDO, ISRO, Oxford, IISc."),
