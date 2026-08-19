@@ -125,7 +125,7 @@ MY_WORK = """
         <p class="cap">Minimalist lands at Target — the US launch creative.</p>
       </div>
       <div class="it" style="grid-column:span 3;margin-top:40px">
-        <div class="yt placeholder">Tote bag ad shoot<br><small>(video coming — paste YouTube ID in build-pages.py)</small></div>
+        <img src="../assets/work/brand/tote-bag-poster.jpeg" alt="Tote bag ad shoot">
         <p class="cap">Ad shoot — Tote Bag. Owned strategy through on-set direction to final execution.</p>
       </div>
 

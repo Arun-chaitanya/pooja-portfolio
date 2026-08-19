@@ -18,5 +18,4 @@ Static site, no build step. Open `index.html` or deploy the folder as-is (Netlif
 - [ ] Real email in footer (currently `hello@sabhyabacchi.com`)
 - [ ] Real Instagram / TikTok handles in footer
 - [ ] Build `contact/` page
-- [ ] Tote bag video: upload to YouTube, put the ID in `build-pages.py` (placeholder box on My work)
 - [ ] About page: replace the desert-island line with Pooja's own
