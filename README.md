@@ -1,6 +1,8 @@
 # SabhyaBacchi — Pooja's portfolio
 
-Static site, no build step. Open `index.html` or deploy the folder as-is (Netlify / Vercel / GitHub Pages).
+Static site, no build step. Deploy the folder as-is (Netlify / Vercel / GitHub Pages).
+
+**Local preview:** double-click `serve.command` (or `python3 -m http.server 8000`) and open http://localhost:8000 — the YouTube videos on *My work* only play over http://, not from a double-clicked `index.html` (YouTube error 153).
 
 ## Structure
 - `index.html` — home page
