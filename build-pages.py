@@ -270,6 +270,35 @@ DECK_JS = """
 </script>
 """
 
+
+# ---- per-page social/SEO meta (og:*, twitter:*, description) ---------------
+BASE = "https://sabhyabacchi.vercel.app"
+PAGE_META = {
+    "about":   ("About — SabhyaBacchi", "about",
+                "A scientist. A paradox. A storyteller with a camera and crayons in her hands. Previously in STEM: DRDO, ISRO, Oxford, IISc."),
+    "my-work": ("My work — SabhyaBacchi", "work",
+                "Research, strategy and content direction for Minimalist × Hindustan Unilever — 22.8M views, 35.4K likes, 3 product launches informed."),
+    "contact": ("Contact — SabhyaBacchi", "contact",
+                "Say hi — collaborations, commissions, or just strange little things you think I'd like."),
+}
+
+def set_meta(page, slug):
+    title, card, desc = PAGE_META[slug]
+    d = desc.replace('"', "&quot;")
+    repl = {
+        r'(<meta name="description" content=")[^"]*': r"\g<1>" + d,
+        r'(<meta property="og:title" content=")[^"]*': r"\g<1>" + title,
+        r'(<meta property="og:description" content=")[^"]*': r"\g<1>" + d,
+        r'(<meta property="og:url" content=")[^"]*': r"\g<1>" + f"{BASE}/{slug}/",
+        r'(<meta property="og:image" content=")[^"]*': r"\g<1>" + f"{BASE}/assets/og/{card}.png",
+        r'(<meta name="twitter:title" content=")[^"]*': r"\g<1>" + title,
+        r'(<meta name="twitter:description" content=")[^"]*': r"\g<1>" + d,
+        r'(<meta name="twitter:image" content=")[^"]*': r"\g<1>" + f"{BASE}/assets/og/{card}.png",
+    }
+    for pat, rep in repl.items():
+        page = re.sub(pat, rep, page)
+    return page
+
 def build(slug, title, content, active_href):
     page = HEAD_AND_HEADER + COMMON_CSS + content + YT_JS + DECK_JS + FOOTER_AND_TAIL
     # relative asset/paths from a subdirectory
@@ -284,6 +313,7 @@ def build(slug, title, content, active_href):
     page = page.replace(f'<a href="{active_href}" data-animation-role="header-element">',
                         f'<a href="{active_href}" data-animation-role="header-element" class="header-nav-item--active" aria-current="page">')
     page = re.sub(r'<title>[^<]*</title>', f'<title>{title}</title>', page)
+    page = set_meta(page, slug)
     out = ROOT / slug / "index.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(page)

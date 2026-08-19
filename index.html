@@ -13,8 +13,19 @@
 
 
 
-<meta name="twitter:card" content="summary">
-<meta name="description" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Pooja — scientist, storyteller, content director. Welcome to my playground.">
+<meta property="og:site_name" content="SabhyaBacchi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SabhyaBacchi — Pooja">
+<meta property="og:description" content="Pooja — scientist, storyteller, content director. Welcome to my playground.">
+<meta property="og:url" content="https://sabhyabacchi.vercel.app">
+<meta property="og:image" content="https://sabhyabacchi.vercel.app/assets/og/home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:title" content="SabhyaBacchi — Pooja">
+<meta name="twitter:description" content="Pooja — scientist, storyteller, content director. Welcome to my playground.">
+<meta name="twitter:image" content="https://sabhyabacchi.vercel.app/assets/og/home.png">
 <link rel="preconnect" href="https://images.squarespace-cdn.com">
 <link rel="preconnect" href="https://file.squarespace-cdn.com" crossorigin="">
 <style data-sqsp-font-ids="6a31393d494e3c6626e63daa,6a3137d3494e3c6626e63abc">
@@ -1445,8 +1456,10 @@
 
 
   .fe-block-yui_3_17_2_1_1782340665104_6127 {
-    grid-area: 2/1/7/11;
+    grid-area: 2/1/8/11;
     z-index: 9;
+    /* hand-drawn title artwork: never crop it */
+    img { object-fit: contain !important; }
 
     @media (max-width: 767px) {
       
@@ -1466,7 +1479,7 @@
 
   @media (min-width: 768px) {
     .fe-block-yui_3_17_2_1_1782340665104_6127 {
-      grid-area: 1/6/10/21;
+      grid-area: 1/6/13/21;
       z-index: 3;
 
       
@@ -1747,7 +1760,7 @@
   
   
   
-  <img data-stretch="true" data-image-focal-point="0.5,0.5" data-sqsp-image-block-image="" alt="" data-licensed-asset-preview="false" data-load="false" elementtiming="system-image-block" src="assets/img0.png" width="2500" height="739" sizes="auto, 100vw" style="display:block;object-position: var(--image-component-focal-point);object-fit: var(--image-component-object-fit);" decoding="async" data-loader="sqs">
+  <img data-stretch="true" data-image-focal-point="0.5,0.5" data-sqsp-image-block-image="" alt="" data-licensed-asset-preview="false" data-load="false" elementtiming="system-image-block" src="assets/pooja-graffiti.png" width="2135" height="717" sizes="auto, 100vw" style="display:block;object-position: var(--image-component-focal-point);object-fit: var(--image-component-object-fit);" decoding="async" data-loader="sqs">
   
   <div class="fluidImageOverlay"></div>
 
@@ -1778,11 +1791,11 @@
       #block-yui_3_17_2_1_1782340665104_6127 {
         --image-component-focal-point: 50% 50%;
         
-  --image-component-object-fit: cover;
+  --image-component-object-fit: contain;
   --image-component-overlay-opacity: 0;
   --image-component-overlay-blend-mode: normal;
   
-  --image-component-native-aspect-ratio: 2500/739;
+  --image-component-native-aspect-ratio: 2135/717;
   
   
   
