@@ -210,14 +210,6 @@ MY_WORK = """
   </div>
 </section>
 
-<section class="blue center">
-  <div class="wrap">
-    <h2>[the brief]</h2>
-    <p>Minimalist was entering an actives-skincare space owned by La Roche-Posay, Beauty of Joseon and The Ordinary. The brief wasn't "make content" — it was: understand what the Asia and Indian market actually wants from a science-backed brand, and make sure every launch decision is built on real customer data.</p>
-    <p>Comparative trend and conversion analysis across the US, UK and Asia, paired with 30–40 minute one-on-one customer interviews per segment and a full competitive teardown — research that directly shaped three launches: PDRN, Cleansing Oil and Serum.</p>
-    <p>stay tuned ☆</p>
-  </div>
-</section>
 
 <section class="white center">
   <div class="wrap">
