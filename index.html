@@ -3530,6 +3530,20 @@
   .header--menu-open .burger-inner .top-bun{transform:translateY(5px) rotate(45deg)}
   .header--menu-open .burger-inner .bottom-bun{transform:translateY(-5px) rotate(-45deg)}
   .burger-inner .top-bun,.burger-inner .bottom-bun{transition:transform .2s ease}
+  /* Navy on the overlay's yellow. The theme pairs that yellow with
+     --menuOverlayNavigationLinkColor, but its --black-hsl token holds a white
+     value, so the links, title and X all came out white-on-yellow (1.48:1).
+     Navy is the inner pages' section colour and hits 11.5:1 here. */
+  .header--menu-open{--menuOverlayNavigationLinkColor:rgb(17,8,97)}
+  .header--menu-open .header .header-menu-nav-item a,
+  .header--menu-open .header .header-title-text a,
+  .header--menu-open .header .header-nav-wrapper a,
+  .header--menu-open .header .header-nav-wrapper button{color:rgb(17,8,97)}
+  /* the theme's last declaration for these is the ButtonText system colour,
+     which ignores the variable above, so set the X bars explicitly */
+  .header--menu-open .header .header-burger .top-bun,
+  .header--menu-open .header .header-burger .patty,
+  .header--menu-open .header .header-burger .bottom-bun{background-color:rgb(17,8,97)}
 </style>
 <script>
 (function(){
