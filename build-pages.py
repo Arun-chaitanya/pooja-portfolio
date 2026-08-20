@@ -40,7 +40,7 @@ COMMON_CSS = """
   .yt .play{position:absolute;inset:0;display:grid;place-items:center}
   .yt .play span{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;color:#111;font-size:18px;box-shadow:0 4px 16px rgba(0,0,0,.35)}
   .scatter .it .yt.placeholder,.yt.placeholder{aspect-ratio:9/16;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.35);font-size:13px;text-align:center;padding:24px;cursor:default}
-  /* slide strip — quirky conveyor of taped-up cards */
+  /* slide strip: quirky conveyor of taped-up cards */
   .deck{position:relative;margin-top:40px;overflow:hidden;padding:52px 0 32px;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y}
   .deck.dragging{cursor:grabbing}
   .deck:before,.deck:after{content:"";position:absolute;top:0;bottom:0;width:72px;z-index:3;pointer-events:none}
@@ -127,10 +127,9 @@ ABOUT = """
 <section class="blue">
   <div class="wrap about-grid">
     <div>
-      <p>I&rsquo;ve been the first bencher asking the 1 question every kid prayed I wouldn&rsquo;t ask &mdash; and the last bencher drawing the Picasso of her life in crayons and getting it stained with oil because her lunchbox wasn&rsquo;t air tight.</p>
+      <p>I&rsquo;ve been the first bencher asking the 1 question every kid prayed I wouldn&rsquo;t ask, and the last bencher drawing the Picasso of her life in crayons and getting it stained with oil because her lunchbox wasn&rsquo;t air tight.</p>
       <p>Somewhere between the two, I became a scientist, storyteller, community builder and professional collector of strange little things.</p>
       <p>I&rsquo;ve spent years learning how to look closely. Now I make things worth looking at.</p>
-      <p class="cap" style="margin-top:28px;max-width:38ch">if stranded on a desert island my essentials would include a good sunscreen, a notebook full of half-finished ideas, and one very long playlist.</p>
       <p style="margin-top:24px"><a class="u" href="../my-work/">see my work &rarr;</a></p>
     </div>
     <figure style="margin:0">
@@ -166,27 +165,27 @@ MY_WORK = """
       <!-- highest-performing videos (YouTube) -->
       <div class="it" style="grid-column:span 3">
         <div class="yt" data-yt="Um2pwzKSKbc" data-title="Marula Oil 05% Cleansing Oil"><img src="../assets/work/reels/yt-marula.jpg" alt=""><div class="play"><span>&#9654;</span></div></div>
-        <p class="cap">Marula Oil 05% — launch film for the cleansing oil. Tap to play.</p>
+        <p class="cap">Marula Oil 05%: launch film for the cleansing oil. Tap to play.</p>
       </div>
       <div class="it" style="grid-column:span 3;margin-top:64px">
         <div class="yt" data-yt="udhyJE-0ngo" data-title="Multi Peptide"><img src="../assets/work/reels/yt-multipep.jpg" alt=""><div class="play"><span>&#9654;</span></div></div>
-        <p class="cap">Multi Peptide — one of my highest-performing videos.</p>
+        <p class="cap">Multi Peptide: one of my highest-performing videos.</p>
       </div>
       <div class="it wide" style="grid-column:span 3">
-        <img src="../assets/work/brand/minimalist-at-target.png" alt="Minimalist — now at Target">
-        <p class="cap">Minimalist lands at Target — the US launch creative.</p>
+        <img src="../assets/work/brand/minimalist-at-target.png" alt="Minimalist, now at Target">
+        <p class="cap">Minimalist lands at Target: the US launch creative.</p>
       </div>
       <div class="it" style="grid-column:span 3;margin-top:40px">
         <div class="yt" data-yt="nmV7-prm78Y" data-title="Tote Bag"><img src="../assets/work/reels/yt-tote-bag.jpg" alt=""><div class="play"><span>&#9654;</span></div></div>
-        <p class="cap">Ad shoot — Tote Bag. Owned strategy through on-set direction to final execution. Tap to play.</p>
+        <p class="cap">Ad shoot: Tote Bag. Owned strategy through on-set direction to final execution. Tap to play.</p>
       </div>
 
       <!-- reel performance -->
       <div class="it" style="grid-column:span 2"><img src="../assets/work/reels/barrier-cream-14-7m.png" alt=""><p class="cap">14.7M views</p></div>
       <div class="it" style="grid-column:span 2;margin-top:36px"><img src="../assets/work/reels/multi-repair-8-2m.png" alt=""><p class="cap">8.2M views</p></div>
       <div class="it" style="grid-column:span 2"><img src="../assets/work/reels/marula-102k.png" alt=""><p class="cap">102K views</p></div>
-      <div class="it wide" style="grid-column:span 3;margin-top:24px"><img src="../assets/work/brand/ig-marula-launch-post.png" alt="" style="aspect-ratio:16/10"><p class="cap">Marula Oil launch post — 13.8K likes.</p></div>
-      <div class="it wide" style="grid-column:span 3"><img src="../assets/work/brand/tote-bag-banner.png" alt="" style="aspect-ratio:1/1"><p class="cap">Tote bag campaign — "Designed for everyday hustle."</p></div>
+      <div class="it wide" style="grid-column:span 3;margin-top:24px"><img src="../assets/work/brand/ig-marula-launch-post.png" alt="" style="aspect-ratio:16/10"><p class="cap">Marula Oil launch post: 13.8K likes.</p></div>
+      <div class="it wide" style="grid-column:span 3"><img src="../assets/work/brand/tote-bag-banner.png" alt="" style="aspect-ratio:1/1"><p class="cap">Tote bag campaign: "Designed for everyday hustle."</p></div>
     </div>
 
     <h2 style="margin-top:96px">science, made watchable</h2>
@@ -196,15 +195,15 @@ MY_WORK = """
       <figure><img src="../assets/work/carousels/01-skin-vulnerability.png" alt=""><figcaption>Skin &amp; its vulnerability</figcaption></figure>
       <figure><img src="../assets/work/carousels/02-internal-external-factors.png" alt=""><figcaption>Internal vs external factors</figcaption></figure>
       <figure><img src="../assets/work/carousels/04-ghk-cu-peptide.png" alt=""><figcaption>GHK-Cu peptide</figcaption></figure>
-      <figure><img src="../assets/work/carousels/05-pdrn-repair-molecule.png" alt=""><figcaption>PDRN — the repair molecule</figcaption></figure>
+      <figure><img src="../assets/work/carousels/05-pdrn-repair-molecule.png" alt=""><figcaption>PDRN: the repair molecule</figcaption></figure>
       <figure><img src="../assets/work/carousels/06-pdrn-cellular-level.png" alt=""><figcaption>How PDRN works</figcaption></figure>
-      <figure><img src="../assets/work/carousels/07-pih-biological-basis.png" alt=""><figcaption>PIH — biological basis</figcaption></figure>
+      <figure><img src="../assets/work/carousels/07-pih-biological-basis.png" alt=""><figcaption>PIH: biological basis</figcaption></figure>
       <figure><img src="../assets/work/carousels/08-vitamin-c-brightness.png" alt=""><figcaption>Vitamin C</figcaption></figure>
       <figure><img src="../assets/work/carousels/09-glycolic-exfoliation.png" alt=""><figcaption>Glycolic acid</figcaption></figure>
       <figure><img src="../assets/work/carousels/03-double-cleanse-dull-skin.png" alt=""><figcaption>Double cleanse</figcaption></figure>
-      <figure><img src="../assets/work/brand/cleansing-oil-how-it-works.png" alt="" style="object-fit:contain;background:#fff"><figcaption>"Like dissolves like" — PDP module</figcaption></figure>
-      <figure><img src="../assets/work/brand/marula-oil-free-from.png" alt=""><figcaption>Marula Oil — free from</figcaption></figure>
-      <figure><img src="../assets/work/brand/b12-toner-dermat-tested.png" alt=""><figcaption>B12 toner — dermat tested</figcaption></figure>
+      <figure><img src="../assets/work/brand/cleansing-oil-how-it-works.png" alt="" style="object-fit:contain;background:#fff"><figcaption>"Like dissolves like" PDP module</figcaption></figure>
+      <figure><img src="../assets/work/brand/marula-oil-free-from.png" alt=""><figcaption>Marula Oil: free from</figcaption></figure>
+      <figure><img src="../assets/work/brand/b12-toner-dermat-tested.png" alt=""><figcaption>B12 toner: dermat tested</figcaption></figure>
     </div>
     </div>
   </div>
@@ -227,7 +226,7 @@ CONTACT = """
 <section class="navy center" style="min-height:60vh;display:grid;place-items:center">
   <div class="wrap">
     <h1>[contact]</h1>
-    <p>Say hi &mdash; collaborations, commissions, or just strange little things you think I&rsquo;d like.</p>
+    <p>Say hi: collaborations, commissions, or just strange little things you think I&rsquo;d like.</p>
     <p style="margin-top:28px"><a class="u" href="mailto:frpooja25@gmail.com" style="font-size:clamp(20px,2.6vw,34px);font-weight:700">frpooja25@gmail.com</a></p>
     <p style="margin-top:20px"><a class="u" href="https://www.instagram.com/SabhyaBacchi/" target="_blank" rel="noopener">Instagram</a></p>
   </div>
@@ -265,12 +264,12 @@ DECK_JS = """
 # ---- per-page social/SEO meta (og:*, twitter:*, description) ---------------
 BASE = "https://sabhyabacchi.com"
 PAGE_META = {
-    "about":   ("About — SabhyaBacchi", "about",
+    "about":   ("About | Sabhyabacchi", "about",
                 "A scientist. A paradox. A storyteller with a camera and crayons in her hands. Previously in STEM: DRDO, ISRO, Oxford, IISc."),
-    "my-work": ("My work — SabhyaBacchi", "work",
-                "Research, strategy and content direction for Minimalist × Hindustan Unilever — 22.8M views, 35.4K likes, 3 product launches informed."),
-    "contact": ("Contact — SabhyaBacchi", "contact",
-                "Say hi — collaborations, commissions, or just strange little things you think I'd like."),
+    "my-work": ("My work | Sabhyabacchi", "work",
+                "Research, strategy and content direction for Minimalist × Hindustan Unilever: 22.8M views, 35.4K likes, 3 product launches informed."),
+    "contact": ("Contact | Sabhyabacchi", "contact",
+                "Say hi: collaborations, commissions, or just strange little things you think I'd like."),
 }
 
 def set_meta(page, slug):
@@ -310,9 +309,9 @@ def build(slug, title, content, active_href):
     out.write_text(page)
     print("wrote", out.relative_to(ROOT), len(page)//1024, "KB")
 
-build("about", "About — SabhyaBacchi", ABOUT, "../about/")
-build("my-work", "My work — SabhyaBacchi", MY_WORK, "../my-work/")
-build("contact", "Contact — SabhyaBacchi", CONTACT, "../contact/")
+build("about", "About | Sabhyabacchi", ABOUT, "../about/")
+build("my-work", "My work | Sabhyabacchi", MY_WORK, "../my-work/")
+build("contact", "Contact | Sabhyabacchi", CONTACT, "../contact/")
 
 # make home nav links relative too so everything works from file:// and any host
 h2 = home.replace('href="/about"', 'href="about/"').replace('href="/my-work"', 'href="my-work/"').replace('href="/contact"', 'href="contact/"')
