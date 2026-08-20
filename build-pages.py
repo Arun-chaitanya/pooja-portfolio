@@ -163,22 +163,22 @@ MY_WORK = """
     </div>
 
     <div class="scatter">
-      <!-- two highest-performing videos (YouTube) -->
+      <!-- highest-performing videos (YouTube) -->
       <div class="it" style="grid-column:span 3">
-        <div class="yt" data-yt="Kg8UL_qJ2YI" data-title="Marula Oil 05% Cleansing Oil"><img src="../assets/work/reels/marula-102k.png" alt=""><div class="play"><span>&#9654;</span></div></div>
+        <div class="yt" data-yt="Um2pwzKSKbc" data-title="Marula Oil 05% Cleansing Oil"><img src="../assets/work/reels/yt-marula.jpg" alt=""><div class="play"><span>&#9654;</span></div></div>
         <p class="cap">Marula Oil 05% — launch film for the cleansing oil. Tap to play.</p>
       </div>
       <div class="it" style="grid-column:span 3;margin-top:64px">
-        <div class="yt" data-yt="Lponz0cZinM" data-title="Multi Peptide"><img src="../assets/work/reels/multi-repair-8-2m.png" alt=""><div class="play"><span>&#9654;</span></div></div>
-        <p class="cap">Multi Peptide — two of my highest-performing videos.</p>
+        <div class="yt" data-yt="udhyJE-0ngo" data-title="Multi Peptide"><img src="../assets/work/reels/yt-multipep.jpg" alt=""><div class="play"><span>&#9654;</span></div></div>
+        <p class="cap">Multi Peptide — one of my highest-performing videos.</p>
       </div>
       <div class="it wide" style="grid-column:span 3">
         <img src="../assets/work/brand/minimalist-at-target.png" alt="Minimalist — now at Target">
         <p class="cap">Minimalist lands at Target — the US launch creative.</p>
       </div>
       <div class="it" style="grid-column:span 3;margin-top:40px">
-        <img src="../assets/work/brand/tote-bag-poster.jpeg" alt="Tote bag ad shoot">
-        <p class="cap">Ad shoot — Tote Bag. Owned strategy through on-set direction to final execution.</p>
+        <div class="yt" data-yt="nmV7-prm78Y" data-title="Tote Bag"><img src="../assets/work/reels/yt-tote-bag.jpg" alt=""><div class="play"><span>&#9654;</span></div></div>
+        <p class="cap">Ad shoot — Tote Bag. Owned strategy through on-set direction to final execution. Tap to play.</p>
       </div>
 
       <!-- reel performance -->
