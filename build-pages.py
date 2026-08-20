@@ -41,11 +41,13 @@ COMMON_CSS = """
   .yt .play span{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;color:#111;font-size:18px;box-shadow:0 4px 16px rgba(0,0,0,.35)}
   .scatter .it .yt.placeholder,.yt.placeholder{aspect-ratio:9/16;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.35);font-size:13px;text-align:center;padding:24px;cursor:default}
   /* slide strip: quirky conveyor of taped-up cards */
-  .deck{position:relative;margin-top:40px;overflow:hidden;padding:52px 0 32px;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y}
+  .deck{position:relative;margin-top:40px;overflow:hidden;padding:14px 0 32px;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y}
   .deck.dragging{cursor:grabbing}
   .deck:before,.deck:after{content:"";position:absolute;top:0;bottom:0;width:72px;z-index:3;pointer-events:none}
   .deck:before{left:0;background:linear-gradient(90deg,var(--navy),transparent)} .deck:after{right:0;background:linear-gradient(270deg,var(--navy),transparent)}
-  .strip{display:flex;gap:22px;width:max-content;will-change:transform}
+  /* padding-top absorbs what sticks out above a card: the 14px tape, the -6px
+     nth-child margin and the 7px bob, so nothing escapes into the hint row */
+  .strip{display:flex;gap:22px;width:max-content;will-change:transform;padding-top:44px}
   .strip figure{flex:0 0 240px;margin:0;position:relative;--r:0deg;--d:0s;transform:rotate(var(--r));transition:transform .45s cubic-bezier(.34,1.56,.64,1),filter .3s;animation:bob 5.5s ease-in-out var(--d) infinite}
   .strip figure:nth-child(6n+1){--r:-3deg;--d:0s} .strip figure:nth-child(6n+2){--r:2.2deg;--d:-1.1s;margin-top:18px} .strip figure:nth-child(6n+3){--r:-1.4deg;--d:-2.3s;margin-top:-6px}
   .strip figure:nth-child(6n+4){--r:3.2deg;--d:-3.4s;margin-top:12px} .strip figure:nth-child(6n+5){--r:-2.4deg;--d:-.7s} .strip figure:nth-child(6n+6){--r:1.6deg;--d:-4.2s;margin-top:22px}
@@ -60,7 +62,9 @@ COMMON_CSS = """
   .deck.in .strip figure{opacity:1;transition:transform .7s cubic-bezier(.34,1.56,.64,1),opacity .5s,filter .3s}
   .deck.in .strip figure:nth-child(n){transition-delay:calc(var(--i,0) * 70ms)}
   .deck.in .strip figure:hover{transition-delay:0s}
-  .deck .hint{position:absolute;right:18px;top:4px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;font-family:"Helvetica Neue",Arial,sans-serif;z-index:4}
+  /* the hint takes its own row rather than floating over the strips: the tape
+     on each card overhangs 14px above it, so an absolute hint got run into */
+  .deck .hint{display:block;text-align:right;padding:0 18px 0 0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;font-family:"Helvetica Neue",Arial,sans-serif;z-index:4}
   @media (prefers-reduced-motion:reduce){.strip figure{animation:none}.deck:not(.in) .strip figure{opacity:1;transform:rotate(var(--r))}}
   .stats{display:flex;gap:56px;flex-wrap:wrap;margin:40px 0 8px}
   .stats b{display:block;font-size:clamp(40px,5vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1}
@@ -97,13 +101,14 @@ COMMON_CSS = """
     .scatter .it[style]{margin-top:0 !important}
     .scatter .cap{max-width:none;margin-top:8px;font-size:12.5px}
     /* two shorter conveyor rows so more cards fit on a narrow screen */
-    .deck{padding:34px 0 20px;margin-top:28px}
+    .deck{padding:10px 0 20px;margin-top:28px}
     .deck:before,.deck:after{width:36px}
     .strip{gap:14px}
     .strip + .strip{margin-top:18px}
     .strip figure{flex-basis:132px}
     .strip figcaption{font-size:11px;margin-top:6px}
-    .deck .hint{top:0;right:6px}
+    .deck .hint{padding:0 6px 0 0}
+    .strip{padding-top:40px}
   }
 </style>
 """

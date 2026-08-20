@@ -3534,28 +3534,35 @@
 <script>
 (function(){
   var body=document.body, header=document.getElementById('header');
-  var btn=document.querySelector('.header-burger-btn'), menu=document.querySelector('.header-menu');
+  /* the header ships a desktop copy AND a mobile copy of the burger, so bind
+     every one of them -- querySelector would only ever wire the desktop one */
+  var btns=[].slice.call(document.querySelectorAll('.header-burger-btn'));
+  var menus=[].slice.call(document.querySelectorAll('.header-menu'));
 
   /* publish the header's real height so content can clear it */
   function h(){ if(!header) return;
     var bar=header.querySelector('.header-announcement-bar-wrapper')||header;
     var v=Math.round(bar.getBoundingClientRect().height);
     body.style.setProperty('--hdr-h',v+'px');
-    if(menu) menu.style.paddingTop=v+'px'; }
+    menus.forEach(function(m){m.style.paddingTop=v+'px'}); }
   h(); window.addEventListener('resize',h); window.addEventListener('load',h);
 
-  if(!btn||!menu) return;
-  var open=document.querySelector('.js-header-burger-open-title');
-  var close=document.querySelector('.js-header-burger-close-title');
+  if(!btns.length||!menus.length) return;
   function set(on){
     body.classList.toggle('header--menu-open',on);
-    btn.setAttribute('aria-expanded',on?'true':'false');
-    if(open) open.hidden=on; if(close) close.hidden=!on;
+    btns.forEach(function(b){
+      b.setAttribute('aria-expanded',on?'true':'false');
+      var o=b.querySelector('.js-header-burger-open-title'),
+          c=b.querySelector('.js-header-burger-close-title');
+      if(o) o.hidden=on; if(c) c.hidden=!on;
+    });
   }
-  btn.setAttribute('aria-expanded','false');
-  btn.addEventListener('click',function(e){ e.preventDefault(); set(!body.classList.contains('header--menu-open')); });
+  btns.forEach(function(b){
+    b.setAttribute('aria-expanded','false');
+    b.addEventListener('click',function(e){ e.preventDefault(); set(!body.classList.contains('header--menu-open')); });
+  });
   /* close on link tap or Escape */
-  menu.addEventListener('click',function(e){ if(e.target.closest('a')) set(false); });
+  menus.forEach(function(m){ m.addEventListener('click',function(e){ if(e.target.closest('a')) set(false); }); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
 })();
 </script>

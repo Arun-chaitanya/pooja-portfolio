@@ -1,0 +1,136 @@
+- generic [ref=e2]:
+  - banner:
+    - generic [ref=e3]:
+      - link "Skip to Content" [ref=e4] [cursor=pointer]:
+        - /url: "#page"
+      - generic [ref=e8]:
+        - link "Sabhyabacchi Pooja" [ref=e11] [cursor=pointer]:
+          - /url: ../
+          - generic [ref=e12]: Sabhyabacchi
+          - generic [ref=e14]: Pooja
+        - navigation [ref=e17]:
+          - link "About" [ref=e19] [cursor=pointer]:
+            - /url: ../about/
+          - link "My work" [ref=e21] [cursor=pointer]:
+            - /url: ../my-work/
+          - link "Contact" [ref=e23] [cursor=pointer]:
+            - /url: ../contact/
+  - main [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - heading "[my work]" [level=1] [ref=e29]
+          - paragraph [ref=e30]: research, strategy and content direction for Minimalist × Hindustan Unilever.
+          - generic [ref=e31]:
+            - generic [ref=e32]:
+              - generic [ref=e33]: 22.8M
+              - text: views across all videos
+            - generic [ref=e34]:
+              - generic [ref=e35]: 35.4K
+              - text: likes across all videos
+            - generic [ref=e36]:
+              - generic [ref=e37]: "3"
+              - text: product launches informed
+            - generic [ref=e38]:
+              - generic [ref=e39]: "3"
+              - text: markets researched
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - button "▶" [ref=e42] [cursor=pointer]:
+              - generic [ref=e44]: ▶
+            - paragraph [ref=e45]: "Marula Oil 05%: launch film for the cleansing oil. Tap to play."
+          - generic [ref=e46]:
+            - button "▶" [ref=e47] [cursor=pointer]:
+              - generic [ref=e49]: ▶
+            - paragraph [ref=e50]: "Multi Peptide: one of my highest-performing videos."
+          - generic [ref=e51]:
+            - img "Minimalist, now at Target" [ref=e52]
+            - paragraph [ref=e53]: "Minimalist lands at Target: the US launch creative."
+          - generic [ref=e54]:
+            - button "▶" [ref=e55] [cursor=pointer]:
+              - generic [ref=e57]: ▶
+            - paragraph [ref=e58]: "Ad shoot: Tote Bag. Owned strategy through on-set direction to final execution. Tap to play."
+          - paragraph [ref=e60]: 14.7M views
+          - paragraph [ref=e62]: 8.2M views
+          - paragraph [ref=e64]: 102K views
+          - paragraph [ref=e66]: "Marula Oil launch post: 13.8K likes."
+          - paragraph [ref=e68]: "Tote bag campaign: \"Designed for everyday hustle.\""
+        - heading "science, made watchable" [level=2] [ref=e69]
+        - paragraph [ref=e70]: R&D and clinical data rebuilt into carousels the audience could actually finish. Give them a shove →
+        - generic [ref=e71]:
+          - generic [ref=e72]: drag · hover to pause
+          - generic [ref=e73]:
+            - figure "Skin & its vulnerability" [ref=e74]:
+              - generic [ref=e75]: Skin & its vulnerability
+            - figure "Internal vs external factors" [ref=e76]:
+              - generic [ref=e77]: Internal vs external factors
+            - figure "GHK-Cu peptide" [ref=e78]:
+              - generic [ref=e79]: GHK-Cu peptide
+            - 'figure "PDRN: the repair molecule" [ref=e80]':
+              - generic [ref=e81]: "PDRN: the repair molecule"
+            - figure "How PDRN works" [ref=e82]:
+              - generic [ref=e83]: How PDRN works
+            - 'figure "PIH: biological basis" [ref=e84]':
+              - generic [ref=e85]: "PIH: biological basis"
+            - figure "Vitamin C" [ref=e86]:
+              - generic [ref=e87]: Vitamin C
+            - figure "Glycolic acid" [ref=e88]:
+              - generic [ref=e89]: Glycolic acid
+            - figure "Double cleanse" [ref=e90]:
+              - generic [ref=e91]: Double cleanse
+            - figure "\"Like dissolves like\" PDP module" [ref=e92]:
+              - generic [ref=e93]: "\"Like dissolves like\" PDP module"
+            - 'figure "Marula Oil: free from" [ref=e94]':
+              - generic [ref=e95]: "Marula Oil: free from"
+            - 'figure "B12 toner: dermat tested" [ref=e96]':
+              - generic [ref=e97]: "B12 toner: dermat tested"
+            - figure [ref=e98]:
+              - generic [ref=e99]: Skin & its vulnerability
+            - figure [ref=e100]:
+              - generic [ref=e101]: Internal vs external factors
+            - figure [ref=e102]:
+              - generic [ref=e103]: GHK-Cu peptide
+            - figure [ref=e104]:
+              - generic [ref=e105]: "PDRN: the repair molecule"
+            - figure [ref=e106]:
+              - generic [ref=e107]: How PDRN works
+            - figure [ref=e108]:
+              - generic [ref=e109]: "PIH: biological basis"
+            - figure [ref=e110]:
+              - generic [ref=e111]: Vitamin C
+            - figure [ref=e112]:
+              - generic [ref=e113]: Glycolic acid
+            - figure [ref=e114]:
+              - generic [ref=e115]: Double cleanse
+            - figure [ref=e116]:
+              - generic [ref=e117]: "\"Like dissolves like\" PDP module"
+            - figure [ref=e118]:
+              - generic [ref=e119]: "Marula Oil: free from"
+            - figure [ref=e120]:
+              - generic [ref=e121]: "B12 toner: dermat tested"
+      - generic [ref=e123]:
+        - heading "[worked with]" [level=2] [ref=e124]
+        - generic [ref=e125]:
+          - generic [ref=e126]: Minimalist
+          - generic [ref=e127]: Hindustan Unilever
+  - contentinfo [ref=e128]:
+    - generic [ref=e134]:
+      - separator [ref=e139]
+      - heading "Sabhyabacchi" [level=2] [ref=e145]
+      - navigation [ref=e151]:
+        - link "Instagram" [ref=e152] [cursor=pointer]:
+          - /url: https://www.instagram.com/SabhyaBacchi/
+          - img [ref=e154]
+        - link "Email" [ref=e157] [cursor=pointer]:
+          - /url: mailto:frpooja25@gmail.com
+          - img [ref=e159]
+      - separator [ref=e166]
+      - link "About" [ref=e172] [cursor=pointer]:
+        - /url: ../about/
+      - link "My work" [ref=e178] [cursor=pointer]:
+        - /url: ../my-work/
+      - link "Contact" [ref=e184] [cursor=pointer]:
+        - /url: ../contact/
+      - heading "frpooja25@gmail.com" [level=2] [ref=e190]:
+        - link "frpooja25@gmail.com" [ref=e191] [cursor=pointer]:
+          - /url: mailto:frpooja25@gmail.com
