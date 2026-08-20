@@ -3513,4 +3513,51 @@
 
   
 
+
+<!-- mobile nav + header offset -->
+<style>
+  /* the Squarespace header is position:absolute and out of flow, so any page
+     whose first section starts at y=0 slides underneath it. Reserve its height. */
+  body{--hdr-h:0px}
+  .pg > section:first-of-type{padding-top:calc(96px + var(--hdr-h))}
+  @media (max-width:600px){.pg > section:first-of-type{padding-top:calc(40px + var(--hdr-h))}}
+  /* burger needs to sit above the overlay so it can close it again */
+  .header-burger{pointer-events:auto;position:relative;z-index:3}
+  .header--menu-open .header-menu{opacity:1;visibility:visible}
+  .header--menu-open .header-menu .header-menu-nav-list{transform:translatey(0)}
+  .header-menu-nav-item a{display:block;padding:14px 0}
+  /* burger morphs into an X while open */
+  .header--menu-open .burger-inner .top-bun{transform:translateY(5px) rotate(45deg)}
+  .header--menu-open .burger-inner .bottom-bun{transform:translateY(-5px) rotate(-45deg)}
+  .burger-inner .top-bun,.burger-inner .bottom-bun{transition:transform .2s ease}
+</style>
+<script>
+(function(){
+  var body=document.body, header=document.getElementById('header');
+  var btn=document.querySelector('.header-burger-btn'), menu=document.querySelector('.header-menu');
+
+  /* publish the header's real height so content can clear it */
+  function h(){ if(!header) return;
+    var bar=header.querySelector('.header-announcement-bar-wrapper')||header;
+    var v=Math.round(bar.getBoundingClientRect().height);
+    body.style.setProperty('--hdr-h',v+'px');
+    if(menu) menu.style.paddingTop=v+'px'; }
+  h(); window.addEventListener('resize',h); window.addEventListener('load',h);
+
+  if(!btn||!menu) return;
+  var open=document.querySelector('.js-header-burger-open-title');
+  var close=document.querySelector('.js-header-burger-close-title');
+  function set(on){
+    body.classList.toggle('header--menu-open',on);
+    btn.setAttribute('aria-expanded',on?'true':'false');
+    if(open) open.hidden=on; if(close) close.hidden=!on;
+  }
+  btn.setAttribute('aria-expanded','false');
+  btn.addEventListener('click',function(e){ e.preventDefault(); set(!body.classList.contains('header--menu-open')); });
+  /* close on link tap or Escape */
+  menu.addEventListener('click',function(e){ if(e.target.closest('a')) set(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
+})();
+</script>
+
 <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div></body></html>

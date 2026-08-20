@@ -88,7 +88,23 @@ COMMON_CSS = """
   .stem span i{font-style:normal;opacity:.5;margin:0 .55em}
   .about-hero .scrawl{font-family:"Helvetica Neue",Arial,sans-serif;font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.8;margin-top:26px;text-align:right}
   @media (max-width:900px){.about-grid{grid-template-columns:1fr}.scatter{grid-template-columns:repeat(6,1fr)}}
-  @media (max-width:600px){.pg section{padding:64px 6vw}.scatter{grid-template-columns:repeat(2,1fr)}.scatter .it{grid-column:span 1 !important}}
+  @media (max-width:600px){
+    .pg section{padding:64px 6vw}
+    /* masonry columns instead of a grid: grid rows are sized by their tallest
+       item, which left big vertical holes next to the short captions */
+    .scatter{display:block;column-count:2;column-gap:14px;margin-top:32px}
+    .scatter .it{break-inside:avoid;display:block;margin:0 0 14px;grid-column:auto !important}
+    .scatter .it[style]{margin-top:0 !important}
+    .scatter .cap{max-width:none;margin-top:8px;font-size:12.5px}
+    /* two shorter conveyor rows so more cards fit on a narrow screen */
+    .deck{padding:34px 0 20px;margin-top:28px}
+    .deck:before,.deck:after{width:36px}
+    .strip{gap:14px}
+    .strip + .strip{margin-top:18px}
+    .strip figure{flex-basis:132px}
+    .strip figcaption{font-size:11px;margin-top:6px}
+    .deck .hint{top:0;right:6px}
+  }
 </style>
 """
 
@@ -238,22 +254,53 @@ DECK_JS = """
 <script>
 (function(){
   var deck=document.getElementById('deck'); if(!deck) return;
-  var strip=deck.querySelector('.strip'); var figs=[].slice.call(strip.children);
-  figs.forEach(function(f,i){f.style.setProperty('--i',i)});
-  // duplicate for seamless loop
-  figs.forEach(function(f){var c=f.cloneNode(true);c.setAttribute('aria-hidden','true');c.style.setProperty('--i',0);strip.appendChild(c)});
-  var x=0,half=0,speed=28,vel=0,hover=false,drag=false,lastX=0,lastT=0,paused=false;
-  function measure(){half=strip.scrollWidth/2} measure(); window.addEventListener('resize',measure);
+  var origin=deck.querySelector('.strip'); if(!origin) return;
+  var all=[].slice.call(origin.children);          // the 12 real cards
+  var mq=window.matchMedia('(max-width:600px)');
+  var rows=[], hover=false, drag=false, lastX=0, lastT=0;
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var last=performance.now();
+
+  // ---- build one or two conveyor rows out of the same cards ---------------
+  function makeRow(cards,dir){
+    var strip=document.createElement('div'); strip.className='strip';
+    cards.forEach(function(f,i){var c=f.cloneNode(true);c.style.setProperty('--i',i);strip.appendChild(c)});
+    // duplicate once so the loop can wrap seamlessly
+    cards.forEach(function(f){var c=f.cloneNode(true);c.setAttribute('aria-hidden','true');c.style.setProperty('--i',0);strip.appendChild(c)});
+    deck.appendChild(strip);
+    return {el:strip, dir:dir, x:dir<0?0:-1, half:0, vel:0};
+  }
+  function layout(){
+    rows.forEach(function(r){r.el.remove()}); rows=[];
+    if(mq.matches){
+      var mid=Math.ceil(all.length/2);
+      rows.push(makeRow(all.slice(0,mid),-1));   // top row drifts left
+      rows.push(makeRow(all.slice(mid),1));      // bottom row drifts right
+    } else {
+      rows.push(makeRow(all,-1));
+    }
+    measure();
+  }
+  function measure(){ rows.forEach(function(r){ r.half=r.el.scrollWidth/2; }); }
+
+  origin.remove();
+  layout();
+  window.addEventListener('resize',measure);
+  if(mq.addEventListener) mq.addEventListener('change',layout); else mq.addListener(layout);
+
+  var speed=28,last=performance.now();
   function loop(t){var dt=Math.min((t-last)/1000,.05); last=t;
-    if(drag){} else { if(!hover&&!reduce) x-=speed*dt; x+=vel*dt; vel*=Math.pow(.02,dt); if(Math.abs(vel)<2) vel=0; }
-    if(half){ x=((x%half)+half)%half; x-=half; }
-    strip.style.transform='translate3d('+x+'px,0,0)'; requestAnimationFrame(loop);}
+    rows.forEach(function(r){
+      if(!drag){ if(!hover&&!reduce) r.x+=r.dir*speed*dt; r.x+=r.vel*dt; r.vel*=Math.pow(.02,dt); if(Math.abs(r.vel)<2) r.vel=0; }
+      if(r.half){ r.x=((r.x%r.half)+r.half)%r.half; r.x-=r.half; }
+      r.el.style.transform='translate3d('+r.x+'px,0,0)';
+    });
+    requestAnimationFrame(loop);}
   requestAnimationFrame(loop);
+
   deck.addEventListener('mouseenter',function(){hover=true}); deck.addEventListener('mouseleave',function(){hover=false});
-  deck.addEventListener('pointerdown',function(e){drag=true;vel=0;lastX=e.clientX;lastT=performance.now();deck.classList.add('dragging');deck.setPointerCapture(e.pointerId)});
-  deck.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-lastX,now=performance.now(),dt=Math.max(now-lastT,1)/1000;x+=dx;vel=dx/dt*.9;lastX=e.clientX;lastT=now});
+  deck.addEventListener('pointerdown',function(e){drag=true;rows.forEach(function(r){r.vel=0});lastX=e.clientX;lastT=performance.now();deck.classList.add('dragging');deck.setPointerCapture(e.pointerId)});
+  deck.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-lastX,now=performance.now(),dt=Math.max(now-lastT,1)/1000;
+    rows.forEach(function(r){r.x+=dx;r.vel=dx/dt*.9}); lastX=e.clientX;lastT=now});
   function up(){drag=false;deck.classList.remove('dragging')} deck.addEventListener('pointerup',up); deck.addEventListener('pointercancel',up);
   if('IntersectionObserver' in window){ new IntersectionObserver(function(es,o){es.forEach(function(en){if(en.isIntersecting){deck.classList.add('in');o.disconnect()}})},{threshold:.15}).observe(deck);} else deck.classList.add('in');
 })();
